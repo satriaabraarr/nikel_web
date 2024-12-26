@@ -15,9 +15,7 @@ class CreateBookingsTable extends Migration
             $table->string('driver');
             $table->date('rental_date');
             $table->date('return_date');
-            $table->foreignId('approve_level_1_id')->nullable()->constrained('users');
             $table->enum('approve_level_1_status', ['Pending', 'Approved', 'Rejected'])->default('Pending');
-            $table->foreignId('approve_level_2_id')->nullable()->constrained('users');
             $table->enum('approve_level_2_status', ['Pending', 'Approved', 'Rejected'])->default('Pending');
             $table->enum('status', ['Pending', 'Approved', 'Rejected'])->default('Pending');
             $table->timestamps();
